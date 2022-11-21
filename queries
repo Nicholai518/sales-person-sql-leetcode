@@ -1,0 +1,14 @@
+1)
+
+SELECT name
+FROM salesPerson
+WHERE sales_id NOT IN
+(
+SELECT sales_id
+FROM orders
+WHERE com_id in
+
+    (SELECT com_id
+     FROM Company
+     WHERE name = "RED")
+)
